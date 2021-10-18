@@ -78,6 +78,8 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    cssbundling-rails (0.2.4)
+      railties (>= 6.0.0)
     erubi (1.10.0)
     ffi (1.15.4)
     globalid (0.5.2)
@@ -88,6 +90,8 @@ GEM
       rails (>= 6.0.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
+    jsbundling-rails (0.1.9)
+      railties (>= 6.0.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -195,8 +199,10 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  cssbundling-rails (~> 0.2.4)
   importmap-rails
   jbuilder (~> 2.7)
+  jsbundling-rails (~> 0.1.9)
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
