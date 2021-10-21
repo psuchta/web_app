@@ -16,4 +16,10 @@
     <%= render 'layouts/navigation' %>
     <%= yield %>
   </body>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials[:google][:map_api_key] %>&callback=initMap&libraries=&v=weekly"
+    async
+    defer
+  ></script>
+
 </html>
