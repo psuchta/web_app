@@ -17,7 +17,7 @@
     </div>
   </body>
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials[:google][:map_api_key] %>&callback=initMap&libraries=&v=weekly"
+    src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials[:google][:map_api_key] %>&libraries=places&callback=initMap"
     async
     defer
   ></script>
