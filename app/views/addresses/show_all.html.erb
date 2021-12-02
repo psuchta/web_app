@@ -1,0 +1,5 @@
+<h1 class="text-center pb-10"> Show all Addresses</h1>
+
+<div class="text-center" data-controller="addresses" data-addresses-addresses-value="<%=@addresses.to_json%>" data-action="show-all-adresses@window->addresses#showAllAddresses" >
+    <%= content_tag :div, nil, data: { addresses_target: 'map', action: 'google-maps-callback@window->addresses#showAllAddresses' }, id: 'address_map', class: 'flex' %>
+</div>

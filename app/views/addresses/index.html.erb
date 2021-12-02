@@ -35,6 +35,7 @@
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <%= link_to 'Edit', edit_address_path(address), class: 'text-indigo-600 hover:text-indigo-900'%>
+                  <%= link_to "Delete", address, data:{ confirm: "Are you sure?", "turbo-method": :delete }, class: 'text-indigo-600 hover:text-indigo-900' %>
                 </td>
               </tr>
             <% end %>

@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-  before_action :find_address, only: [:edit, :update]
+  before_action :find_address, only: [:edit, :update, :destroy]
 
   def index
     @addresses = Address.all
@@ -21,9 +21,20 @@ class AddressesController < ApplicationController
     end
   end
 
+  def destroy
+    @address.destroy!
+    redirect_to addresses_path
+  end
+
   def update
     @address.update!(address_params)
     redirect_to addresses_path
+  end
+
+  def show_all
+    @addresses = Address.all
+                        .select('latitude as lat, longtitude as lng, address, description')
+                        .as_json(only: [:lat, :lng, :address, :description])
   end
 
   private
