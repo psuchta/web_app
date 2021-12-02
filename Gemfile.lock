@@ -146,6 +146,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.5.1)
     regexp_parser (2.1.1)
     rexml (3.2.5)
     rubyzip (2.3.2)
@@ -174,6 +175,8 @@ GEM
       rails (>= 6.0.0)
     thor (1.1.0)
     tilt (2.0.10)
+    turbo-rails (7.1.1)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     web-console (4.1.0)
@@ -207,11 +210,13 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4)
+  redis (~> 4.0)
   rexml
   sass-rails (>= 6)
   selenium-webdriver
   spring
   stimulus-rails
+  turbo-rails
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
