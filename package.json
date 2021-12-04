@@ -12,7 +12,9 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --outdir=app/assets/builds",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css",
+    "lint": "eslint app/javascript --ext .js",
+    "lint:fix": "eslint app/javascript --ext .js --fix"
   },
   "devDependencies": {
     "eslint": "^8.3.0",
