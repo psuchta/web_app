@@ -20,7 +20,7 @@ export default class extends Controller {
     if (this.map !== undefined) return this.map;
 
     this.addressesValue = this.addressesValue.map((position) => {
-      const newPosition = {};
+      const newPosition = position;
       newPosition.lat = parseFloat(position.lat);
       newPosition.lng = parseFloat(position.lng);
       return newPosition;
