@@ -49,14 +49,12 @@
           <%= form.text_area :description, size: "60x10", class: 'appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-800' %>
         </div>
       </div>
-
+      <div class="text-center">
+        <%= form.submit class:'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+      </div>
     </div>
     <div class="md:w-1/2 pl-5">
       <%= content_tag :div, nil, data: { addresses_target: 'map' }, id: 'address_map', class: 'flex' %>
     </div>
-  </div>
-
-  <div class="text-center">
-    <%= form.submit class:'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
   </div>
 <% end %>
