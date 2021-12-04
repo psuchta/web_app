@@ -65,9 +65,9 @@ export default class extends Controller {
     if (this.map !== undefined) return this.map;
 
     if (initLatitude && initLongtitude) {
-      this.init_for_edit(initLatitude, initLongtitude);
+      this.initForEdit(initLatitude, initLongtitude);
     } else {
-      this.init_blank_map();
+      this.initBlankMap();
     }
     this.autocomplete = new google.maps.places.Autocomplete(this.fieldTarget);
     this.autocomplete.bindTo('bounds', this.map);
@@ -76,7 +76,7 @@ export default class extends Controller {
     return this.map;
   }
 
-  init_for_edit(latitude, longtitude) {
+  initForEdit(latitude, longtitude) {
     const { google } = window;
     const myLatLong = new google.maps.LatLng(latitude, longtitude);
 
@@ -95,7 +95,7 @@ export default class extends Controller {
     this.marker.setVisible(true);
   }
 
-  init_blank_map() {
+  initBlankMap() {
     const { google } = window;
     this.map = new google.maps.Map(this.mapTarget, {
       center: new google.maps.LatLng(
