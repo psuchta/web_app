@@ -1,5 +1,3 @@
-require 'will_paginate'
-
 class YoutubeController < ApplicationController
   def most_popular
     yt = YoutubeVideoClient.new
