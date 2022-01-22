@@ -6,6 +6,7 @@
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.0",
     "autoprefixer": "^10.3.7",
+    "axios": "^0.25.0",
     "esbuild": "^0.13.8",
     "postcss": "^8.3.9",
     "tailwindcss": "^2.2.17"

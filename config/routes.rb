@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   resources :addresses do
     get 'show_all', on: :collection
   end
+
+  namespace :youtube do
+    get 'most_popular', to: 'most_popular'
+    get 'video_comments', to: 'video_comments'
+  end
 end

@@ -1,0 +1,27 @@
+<li class="py-3 sm:py-4">
+  <div class="flex items-center space-x-4">
+    <%= link_to "https://www.youtube.com/watch?v=#{video.id}", target: :blank do %>
+      <div class="flex-shrink-0">
+          <img class="w-20 h-20 rounded-lg" src="<%= video.snippet.thumbnails.default.url%>" alt="Neil image">
+      </div>
+    <% end %>
+    <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium text-gray-900 truncate dark:text-white hover:underline">
+            <%= link_to "Tytuł: #{video.snippet.title}", "https://www.youtube.com/watch?v=#{video.id}", target: :blank %>
+        </p>
+        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+            Wyświetleń: <%= video.statistics.view_count %>
+        </p>
+        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+          <span 
+            class="modal-open cursor-pointer hover:underline"
+            data-action="click->youtube#loadComments"
+            data-youtube-video-id-param="<%=video.id%>"
+          > 
+            Komentarzy: <%= video.statistics.comment_count %> 
+          </span>
+        </p>
+        <%= render partial: 'video_tags', locals: { tags: video.snippet.tags, video_id: video.id } %>
+    </div>
+  </div>
+</li>

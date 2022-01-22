@@ -1,0 +1,31 @@
+<% if tags.present? %>
+  <div id="tag_<%=video_id%>">
+    <% tags.each_with_index do |tag, index| %>
+      <% if index < 3 %>
+        <div class="text-xs inline-flex items-center font-bold leading-sm uppercase px-1 py-1 rounded-full bg-white text-gray-700 border">
+          <%= tag %>
+        </div>
+      <% else %>
+        <div class=" additional-tag text-xs inline-flex items-center font-bold leading-sm uppercase px-1 py-1 rounded-full bg-white text-gray-700 border hidden">
+          <%= tag %>
+        </div>
+      <% end %>
+      <% if index == 3 %>
+        <div
+          class="show-more-tags cursor-pointer text-xs inline-flex items-center font-bold leading-sm uppercase px-1 py-1 rounded-full bg-white text-gray-700 border"
+          data-youtube-video-id-param="<%=video_id%>"
+          data-action="click->youtube#showAllTags"
+        >
+          ...
+        </div>
+      <% end %>
+    <% end %>
+    <div
+      class="show-less-tags cursor-pointer text-xs inline-flex items-center font-bold leading-sm uppercase px-1 py-1 rounded-full bg-white text-gray-700 border hidden"
+      data-youtube-video-id-param="<%=video_id%>"
+      data-action="click->youtube#showLessTags"
+    >
+      ...Show less
+    </div>
+  </div>
+<% end %>
