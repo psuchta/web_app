@@ -1,0 +1,29 @@
+<div data-controller="youtube">
+<h1 class="pb-4">Most popular videos</h1>
+
+<div class="mx-auto">
+  <div class="p-4 bg-white rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div class="flow-root">
+      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+        <%= render partial: 'youtube_video', collection: @videos_list, as: :video %>
+      </ul>
+    </div>
+
+    <div class="pt-5 flex justify-center items-center space-x-1">
+        <% if @prev_page %>
+          <%= link_to youtube_most_popular_path(current_page: @prev_page), class: "flex items-center px-4 py-2 text-gray-500 bg-gray-300 hover:bg-gray-400 rounded-md" do  %>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+            </svg>
+          <% end %>
+        <% end %>
+        <%= link_to youtube_most_popular_path(current_page: @next_page), class: "flex items-center px-4 py-2 text-gray-500 bg-gray-300 hover:bg-gray-400 rounded-md" do  %>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        <% end %>
+    </div>
+  </div>
+</div>
+  <%= render partial: 'comments_modal' %> 
+</div>

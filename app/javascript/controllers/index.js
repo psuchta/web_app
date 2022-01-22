@@ -4,5 +4,7 @@
 import { application } from './application';
 
 import AddressesController from './addresses_controller';
+import YoutubeController from './youtube_controller';
 
 application.register('addresses', AddressesController);
+application.register('youtube', YoutubeController);
