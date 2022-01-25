@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     get 'most_popular', to: 'most_popular'
     get 'video_comments', to: 'video_comments'
   end
+
+  namespace :flickr do
+    get 'search', to: 'search'
+  end
 end
