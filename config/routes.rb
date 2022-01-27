@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   namespace :flickr do
     get 'search', to: 'search'
+    get 'show_photo', to: 'show_photo'
   end
 end

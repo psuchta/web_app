@@ -18,3 +18,11 @@
     </div>
   <% end %>
 </section>
+<%= turbo_frame_tag :show_photo do %>
+<% end %>
+
+<% if @paginate %>
+  <div class="text-center my-10">
+    <%= will_paginate @paginate %>
+  </div>
+<% end %>
