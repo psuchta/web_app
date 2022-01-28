@@ -65,3 +65,5 @@ gem "cssbundling-rails", "~> 0.2.4"
 gem 'flickr'
 
 gem 'will_paginate'
+
+gem 'devise'
