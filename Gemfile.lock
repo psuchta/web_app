@@ -164,9 +164,11 @@ GEM
     msgpack (1.4.2)
     multi_json (1.15.0)
     multipart-post (2.1.1)
+    mysql2 (0.5.3)
     nio4r (2.5.8)
     nokogiri (1.13.1-x86_64-darwin)
       racc (~> 1.4)
+    nori (2.6.0)
     orm_adapter (0.5.0)
     os (1.1.4)
     pg (1.2.3)
@@ -260,6 +262,8 @@ GEM
     uber (0.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
+    wash_out (0.12.0)
+      nori (>= 2.0.0)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -292,6 +296,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jsbundling-rails (~> 0.1.9)
   listen (~> 3.3)
+  mysql2
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
@@ -304,6 +309,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  wash_out
   web-console (>= 4.1.0)
   webdrivers
   will_paginate

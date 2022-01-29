@@ -67,3 +67,5 @@ gem 'flickr'
 gem 'will_paginate'
 
 gem 'devise'
+gem 'wash_out'
+gem 'mysql2'

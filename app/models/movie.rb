@@ -1,0 +1,3 @@
+class Movie < MoviesRecord
+
+end
