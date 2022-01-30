@@ -16,4 +16,6 @@ Rails.application.routes.draw do
     get 'search', to: 'search'
     get 'show_photo', to: 'show_photo'
   end
+
+  wash_out 'api/soap/movies'
 end
