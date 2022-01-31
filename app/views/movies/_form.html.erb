@@ -1,0 +1,37 @@
+<%= form_with model: @movie, url: @movie.id.present? ? movie_path(@movie.id) : movies_path , method: @movie.id.present? ? :patch : :post  do |form| %>
+  <div class="shadow overflow-hidden sm:rounded-md">
+    <div class="px-4 py-5 bg-white sm:p-6">
+      <div class="grid grid-cols-6 gap-6">
+        <div class="col-span-6 sm:col-span-3">
+          <%= form.label :title, "Title", class: 'block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4' %>
+          <%= form.text_field :title, required: true, class: 'appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-800' %>
+        </div>
+
+        <div class="col-span-6 sm:col-span-3">
+          <%= form.label :link, "Link", class: 'block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4' %>
+          <%= form.text_field :link, required: true, class: 'appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-800' %>
+        </div>
+
+        <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+          <%= form.label :year, "Year", class: 'block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4' %>
+          <%= form.date_select :year, {:order => [:year], :start_year => Time.now.year, :end_year => 1900, :selected => Date.new(@movie.year.to_i), :prompt => {:year => "Select year"}}, {class:"border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-800", required: true} %>
+        </div>
+
+        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+          <%= form.label :rating, "Rating", class: 'block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4' %>
+          <%= form.number_field :rating, step: 0.1, min: 0, max: 10, class: 'appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-800' %>
+        </div>
+
+        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+          <%= form.label :genre_id, "Genre", class: 'block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4' %>
+          <%= form.select :genre_id, genres_select_options(@genres), {:prompt => {:year => "Select genre"}}, {class:"border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-800", required: true}%>
+        </div>
+      </div>
+    </div>
+    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+      <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Save
+      </button>
+    </div>
+  </div>
+<% end %>
