@@ -27,6 +27,8 @@ module Api
                   return: nil
 
       def add_movie
+        params[:link] = append_https(params[:link])
+
         Movie.create!(
           title: params[:title],
           year: params[:year],
@@ -87,6 +89,12 @@ module Api
           genre_id: params[:genreId].to_i
         )
         render soap: nil
+      end
+
+      private
+
+      def append_https(link)
+        "https://#{link}" unless link.start_with?('http://', 'https://')
       end
     end
   end

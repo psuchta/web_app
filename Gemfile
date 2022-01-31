@@ -70,3 +70,4 @@ gem 'devise'
 gem 'wash_out'
 gem 'mysql2'
 gem 'savon'
+gem "validate_url"
